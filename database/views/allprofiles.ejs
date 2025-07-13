@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allprofiles</title>
+</head>
+<style>
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>
+        BALAJI APP
+    </h1>
+    <div>
+        <h2>All profiles of the users are </h2>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>email</th>
+            </tr>
+            <% for (user of users){%>
+                <tr>
+                    <td>
+                        <%= user.id%>
+                    </td>
+                    <td>
+                        <%= user.username%>
+                    </td>
+                    <td>
+                        <%= user.email%>
+                    </td>
+                    <td>
+                        <form action="/user/<%= user.id %>/edit">
+                            <button>
+                                Edit username
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <%}%>
+        </table>
+    </div>
+
+</body>
+
+</html>
